@@ -1,5 +1,9 @@
 import TiltedCard from "../components/TiltedCard";
 import Particles from "../components/Particles";
+import profile from "../assets/perf.jpeg";
+import github from "../assets/github-logo.png";
+import instagram from "../assets/instagram-logo.png";
+import linkendin from "../assets/linkedin-logo.png"
 
 export default function Home() {
   return (
@@ -42,7 +46,7 @@ export default function Home() {
         <div className="flex flex-col items-center order-2 lg:order-0">
           <div className="scale-75 sm:scale-90 lg:scale-100 transition-transform">
             <TiltedCard
-              imageSrc="src/assets/perf.jpeg"
+              imageSrc={profile}
               altText="profile picture"
               captionText="Luís Guilherme"
               containerHeight="350px"
@@ -74,7 +78,7 @@ function SocialIcons() {
         target="_blank"
         className="w-10 h-10 lg:w-12 lg:h-12 flex items-center justify-center rounded-full"
       >
-        <img src="src/assets/github-logo.png" alt="GitHub" />
+        <img src={github} alt="GitHub" />
       </a>
 
       <a
@@ -82,7 +86,7 @@ function SocialIcons() {
         target="_blank"
         className="w-10 h-10 lg:w-12 lg:h-12 flex items-center justify-center rounded-full"
       >
-        <img src="src/assets/linkedin-logo.png" alt="Linkedin" />
+        <img src={linkendin} alt="Linkedin" />
       </a>
 
       <a
@@ -90,7 +94,7 @@ function SocialIcons() {
         target="_blank"
         className="w-10 h-10 lg:w-12 lg:h-12 flex items-center justify-center rounded-full"
       >
-        <img src="src/assets/instagram-logo.png" alt="Instagram" />
+        <img src={instagram} alt="Instagram" />
       </a>
     </>
   );

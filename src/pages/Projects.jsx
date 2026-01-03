@@ -1,5 +1,6 @@
 import Card from "../components/Card";
 import RevealOnScroll from "../components/RevealOnScroll";
+import ibie from "../assets/ibie-logo.png"
 
 export default function Projects() {
   return (
@@ -14,28 +15,28 @@ export default function Projects() {
             </h1>
             <div className="mt-20 grid grid-cols-1 xl:grid-cols-2 gap-8 justify-items-center">
               <Card
-                image="src/assets/ibie-logo.png"
+                image={ibie}
                 title="Projeto Ibiê"
                 description="Aplicativo que mapeia atividades recreativas da serra da Ibiapaba, produzido na disciplina de Engenharia de Software"
                 buttonText="Repositório"
                 onClick={() => alert("ok")}
               />
               <Card
-                image="src/assets/ibie-logo.png"
+                image={ibie}
                 title="Projeto Ibiê"
                 description="Aplicativo que mapeia atividades recreativas da serra da Ibiapaba, produzido na disciplina de Engenharia de Software"
                 buttonText="Repositório"
                 onClick={() => alert("ok")}
               />
               <Card
-                image="src/assets/ibie-logo.png"
+                image={ibie}
                 title="Projeto Ibiê"
                 description="Aplicativo que mapeia atividades recreativas da serra da Ibiapaba, produzido na disciplina de Engenharia de Software"
                 buttonText="Repositório"
                 onClick={() => alert("ok")}
               />
               <Card
-                image="src/assets/ibie-logo.png"
+                image={ibie}
                 title="Projeto Ibiê"
                 description="Aplicativo que mapeia atividades recreativas da serra da Ibiapaba, produzido na disciplina de Engenharia de Software"
                 buttonText="Repositório"
