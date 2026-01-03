@@ -5,12 +5,11 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative min-h-screen w-full mx-auto px-0 bg-bluecelest flex items-center justify-center"
+      className="relative min-h-screen scroll-mt-28 sm:scroll-mt-12 w-full mx-auto px-4 sm:px-8 bg-bluecelest"
     >
-      <div className="min-h-screen flex items-center justify-center p-6">
         <RevealOnScroll>
-          <div className="w-full max-w-full">
-            <h1 className="text-white font-bold text-5xl sm:text-5xl text-center">
+          <div className="w-full max-w-6xl mx-auto">
+            <h1 className="text-white font-bold text-3xl sm:text-4xl lg:text-5xl text-center">
               Projects
             </h1>
             <div className="mt-20 grid grid-cols-1 xl:grid-cols-2 gap-8 justify-items-center">
@@ -45,7 +44,6 @@ export default function Projects() {
             </div>
           </div>
         </RevealOnScroll>
-      </div>
     </section>
   );
 }

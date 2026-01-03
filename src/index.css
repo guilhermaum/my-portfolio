@@ -2,14 +2,16 @@
 @import "flowbite/src/themes/default";
 @import "tailwindcss";
 
-@theme {
-  --font-display: "Bricolage Grotesque", sans-serif;
-  --color-bluecelest: #0F172A
-}
-
 @layer base {
+  :root {
+    --font-display: "Bricolage Grotesque", sans-serif;
+    --color-bluecelest: #0F172A;
+  }
+
   body {
     font-family: var(--font-display);
+    overflow-x: hidden;
+    background-color: var(--color-bluecelest);
   }
   html {
     scroll-behavior: smooth;

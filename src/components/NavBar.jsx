@@ -33,17 +33,27 @@ export default function Navbar() {
     const observer = new IntersectionObserver(
       (entries) => {
         if (isClickNavigating.current) return;
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = items.findIndex(
-              (item) => item.id === entry.target.id
-            );
-            if (index !== -1) setActiveIndex(index);
-          }
+
+        const visibleEntries = entries.filter((e) => e.isIntersecting);
+
+        if (visibleEntries.length === 0) return;
+
+        const mostVisible = visibleEntries.reduce((prev, current) => {
+          return prev.intersectionRatio > current.intersectionRatio
+            ? prev
+            : current;
         });
+
+        const index = items.findIndex(
+          (item) => item.id === mostVisible.target.id
+        );
+
+        if (index !== -1) {
+          setActiveIndex(index);
+        }
       },
       {
-        threshold: 0.6,
+        threshold: [0.25, 0.5, 0.75],
       }
     );
 
@@ -52,11 +62,11 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
+    <nav className="fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 z-50 w-full hidden sm:flex justify-center px-2 sm:px-0">
       <div
         className="
-          flex items-center gap-24
-          px-12 py-2 rounded-3xl text-white text-lg
+          flex items-center gap-6 sm:gap-12 lg:gap-24
+          px-4 sm:px-8 lg:px-12 py-2 rounded-3xl text-white text-base sm:text-lg
           bg-[#0f171c]/50 backdrop-blur-sm shadow-md
         "
       >
