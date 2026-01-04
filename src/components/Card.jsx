@@ -4,6 +4,7 @@ export default function Card({
   description,
   buttonText,
   onClick,
+  technologies = [],
 }) {
   return (
     <div className="flex flex-col lg:flex-row text-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 max-w-xl">
@@ -25,12 +26,25 @@ export default function Card({
           {description}
         </p>
 
+        <div className="flex flex-wrap gap-2 mt-2">
+            {technologies.map((tech, index) => (
+              <button
+                key={index}
+                type="button"
+                className="px-3 py-1 text-xs bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 rounded-md hover:bg-cyan-500/30 transition-colors cursor-default"
+              >
+                {tech}
+              </button>
+            ))}
+          </div>
+
         <button
           onClick={onClick}
           className="mt-4 self-start px-5 py-2 bg-cyan-500 hover:bg-cyan-700 hover:cursor-pointer rounded-lg transition-colors text-sm font-medium"
         >
           {buttonText}
         </button>
+
       </div>
     </div>
   );
